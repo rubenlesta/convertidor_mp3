@@ -1,9 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import subprocess
-
-# Ruta al script de conversión
-SCRIPT = "convertidor.py"
+import convertidor  # Importa tu módulo directamente
 
 def descargar():
     entrada = entrada_var.get().strip()
@@ -11,16 +8,16 @@ def descargar():
         messagebox.showwarning("Entrada vacía", "Por favor introduce una URL o título.")
         return
 
-    # Construir y lanzar el comando
     estado.set("⏳ Descargando...")
     app.update()
 
     try:
-        subprocess.run(["python3", SCRIPT, entrada], check=True)
+        # Llama a la función descargar(entrada) de convertidor.py
+        convertidor.descargar(entrada)
         estado.set("✅ Descarga completada.")
-    except subprocess.CalledProcessError:
+    except Exception as e:
         estado.set("❌ Error en la descarga.")
-        messagebox.showerror("Error", "La descarga ha fallado.")
+        messagebox.showerror("Error", f"La descarga ha fallado.\n{e}")
 
 # Crear ventana principal
 app = tk.Tk()
