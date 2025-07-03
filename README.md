@@ -39,12 +39,9 @@ pip install -r requirements.txt
 
 4. Exporta cookies
 
-Esto es para la app.py, para que yt no detecte que eres un bot,
-pero por ahora no esta lista, asiq por ahora saltate esto
-
 Usa la extensión Get cookies.txt en tu navegador.
 Accede a YouTube logueado y guarda las cookies en formato Netscape como cookies.txt.
-Mueve cookies.txt a la carpeta raíz de este proyecto.
+Mueve cookies.txt a la carpeta anterior a la raiz de este proyecto.
 
 ---
 
@@ -63,7 +60,22 @@ Archivo con varias urls -> make music urls.txt
 sudo apt install mpg123
 mpg123 cancion.mp3
 
-La musica se descargara por defecto en Musica/mp3, para cambiar, se cambia en convertidor.py
+La musica se descargara por defecto en ../mp3, para cambiar, se cambia en convertidor.py
+
+Si no quieres usar mpg123 siempre, haz:
+
+nano ~/.bashrc 
+
+Al final de todo mete la linea:
+
+alias play=mpg123
+Ctrl + X
+S
+source ~/.bashrc
+
+Ahora en vez de poner mpg123, usas play:
+
+play cancion.mp3
 
 ---
 
