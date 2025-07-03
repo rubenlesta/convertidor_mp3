@@ -3,7 +3,7 @@ import sys
 import os
 
 # Ruta de salida
-carpeta_salida = "/home/ruben/Musica/mp3"
+carpeta_salida = "../mp3"
 os.makedirs(carpeta_salida, exist_ok=True)
 
 # Recoge argumentos
